@@ -54,7 +54,7 @@ const Footer = ({theme="#3B3B3B"}) => {
                 <Social />
                 <View style={styles.copyrightWrapper}>
                     <Text style={styles.copyrightText}>
-                        Copyright © [FTR] 2024  
+                        Copyright © [BCN] 2024  
                     </Text>
                     <Text style={styles.copyrightText}>
                         All rights reserved

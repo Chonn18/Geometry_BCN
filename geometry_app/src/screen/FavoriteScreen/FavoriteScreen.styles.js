@@ -1,29 +1,10 @@
-import { sizes,colors } from "../../constants";
 import { StyleSheet } from "react-native";
+import { colors, sizes } from "../../constants";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
         paddingHorizontal: sizes.ScreenPaddingHorizontal,
         backgroundColor: colors.WHITE,
-    },
-    containerWrapper: {
-        flex: 1,
-        // justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: colors.WHITE,
-    },
-    findContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: colors.WHITE,
-        width: 340,
-        height: 40,
-        borderRadius: 10,
-        marginTop: 10,
-        marginBottom: 15,
-        borderWidth: 2,  // Độ dày của viền
-        borderColor: "black",
     },
     categoryWrapper: {
         flexDirection: "row",
@@ -43,8 +24,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.WHITE,
         shadowColor: colors.BLACK,
         shadowOffset: {
-            width: 0,
-            height: 2,
+        width: 0,
+        height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
@@ -77,8 +58,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         shadowColor: colors.BLACK,
         shadowOffset: {
-            width: 0,
-            height: 2,
+        width: 0,
+        height: 2,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
@@ -118,17 +99,40 @@ const styles = StyleSheet.create({
     },
     productTitle: {
         color: colors.BLACK,
-        fontSize: 24,
+        fontSize: 30,
         fontWeight: "500",
-        lineHeight: 30,
+        lineHeight: 40,
         textAlign: "center",
+        // marginTop: 20,
     },
     productsWrapper: {
-        flexDirection: "row",
+        flexDirection: "column",
         flexWrap: "wrap",
         justifyContent: "space-between",
-        rowGap: 20,
-        marginTop: 20,
+        rowGap: 10,
+        marginTop: 10,
+    },
+    containerWrapper: {
+        flex: 1,
+        // justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: colors.WHITE,
+        // marginBottom: 10,
+    },
+    
+    // Khối cần căn giữa
+    findContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: colors.WHITE,
+        width: 340,
+        height: 40,
+        borderRadius: 10,
+        marginTop: 10,
+        marginBottom: 15,
+        borderWidth: 2,  // Độ dày của viền
+        borderColor: "black",
     },
     icon: {
         width: 20,  
@@ -141,6 +145,5 @@ const styles = StyleSheet.create({
         color: colors.BLACK,
         fontSize: 16,
     },
-})
-
-export default styles;
+    
+});

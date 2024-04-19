@@ -15,6 +15,9 @@ export const colors = {
     TRANSPARENT: 'transparent',
     BLUE_60: '#48a0e199',
     BLACK: '#000000',
+    blue: '#4154F1',
+    white_t: '#F5F5F5',
+    background: '#F0F4FB'
 };
 
 

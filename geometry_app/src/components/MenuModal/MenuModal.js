@@ -40,28 +40,6 @@ const MenuModal = ({navigateToHome, isVisible, onClose, navigateToFavorite, navi
                     </View>
                 </TouchableOpacity>
 
-                {/* <View style={modalStyles.rowContainer}>
-                    <Image
-                        source={require('../../../assets/icons/magic-wand.png')}
-                        style={modalStyles.icon}
-                    />
-                    <Text style={modalStyles.menuText}>Try on</Text>
-                </View> */}
-                
-
-                {/* <TouchableOpacity onPress={() => {
-                    // navigateToFavorite()
-                    onClose()
-                }}>
-                    <View style={modalStyles.rowContainer}>
-                        <Image
-                            source={require('../../../assets/icons/writing.png')}
-                            style={modalStyles.icon}
-                        />
-                        <Text style={modalStyles.menuText}>Recommend</Text>
-                    </View>
-                </TouchableOpacity> */}
-
                 
                 <TouchableOpacity onPress={() => {
                     navigateToHelp()

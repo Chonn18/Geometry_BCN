@@ -26,8 +26,12 @@ const Header = ({navigation}) => {
                     />
                 </TouchableOpacity>
                 <Image
-                    source={require('../../../assets/images/logotile.png')}
-                    style={{width: 80, height: 30, resizeMode: 'contain'}}
+                        source={require('../../../assets/images/logo.png')}
+                        style={styles.logoIcon}
+                    />
+                <Image
+                    source={require('../../../assets/images/logotitle.png')}
+                    style={{width: 150, height: 30, resizeMode: 'contain'}}
                 />
             </View>
             <View style={styles.cartWrapper}>
@@ -45,8 +49,6 @@ const Header = ({navigation}) => {
                 onClose={() => setMenuVisible(false)} 
                 navigateToHome={() => navigation.navigate('Home')}
                 navigateToFavorite={() => navigation.navigate('Favorite')}
-                navigateToRecom={() => navigation.navigate('Recommend')}
-                navigateToLogin={() => navigation.navigate('Login')}
                 navigateToHelp={() => navigation.navigate('Help')}
             />
         </View>

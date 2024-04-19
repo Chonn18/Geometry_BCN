@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Alert, BackHandler, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen, OpeningScreen, ProductDetailScreen, TryOnScreen, CategoryScreen, 
-    FavoriteScreen, LoginScreen, SignUpScreen, HelpScreen } from '../screen';
+import { HomeScreen, OpeningScreen, HelpScreen, FavoriteScreen, DetailScreen } from '../screen';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from '../constants';
 import { Header, MenuModal } from '../components';
@@ -60,14 +59,10 @@ const RootNavigator = () => {
                 initialRouteName='Opening'
             >
                 <Stack.Screen name='Opening' component={OpeningScreen} options={{headerShown: false}}/>
-                <Stack.Screen name='Login' component={LoginScreen} options={{headerShown: false}}/>
-                <Stack.Screen name='SignUp' component={SignUpScreen} options={{headerShown: false}}/>
-                <Stack.Screen name='ProductDetail' component={ProductDetailScreen} />
                 <Stack.Screen name='Home' component={HomeScreen} />
-                <Stack.Screen name='TryOn' component={TryOnScreen} />
-                <Stack.Screen name='Category' component={CategoryScreen} />
                 <Stack.Screen name='Favorite' component={FavoriteScreen} />
                 <Stack.Screen name='Help' component={HelpScreen} />
+                <Stack.Screen name='Detail' component={DetailScreen} />
             </Stack.Navigator>
             <MenuModal isVisible={isMenuVisible} onClose={() => setIsMenuVisible(false)} />
         </NavigationContainer>

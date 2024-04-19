@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
         width: 35,
         height: 35,
     },
+    logoIcon: {
+        width: 35,
+        height: 35,
+        marginLeft:20,
+    },
     title: {
         color: colors.BLACK,
         fontSize: 24,

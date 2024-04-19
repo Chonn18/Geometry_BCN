@@ -8,16 +8,22 @@ const OpeningScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+            <View style={styles.backgroundImage}>
             <Image 
-                source={require('../../../assets/images/girl.png')} 
-                style={styles.backgroundImage}
+                source={require('../../../assets/images/open.png')} 
             />
-            <View style={styles.logoContainer}>
+            </View>
+            {/* <Image 
+                source={require('../../../assets/images/open.png')} 
+                style={styles.backgroundImage}
+            /> */}
+
+            {/* <View style={styles.logoContainer}>
                 <Image 
                     source={require('../../../assets/images/logo_op.png')}
                     style={styles.logoImage}
                 />
-            </View>
+            </View> */}
             <TouchableOpacity style={styles.startButton} onPress={handleStartButtonPress}>
                 <Text style={styles.startButtonText}>Start</Text>
             </TouchableOpacity>
