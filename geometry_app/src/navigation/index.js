@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Alert, BackHandler, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen, OpeningScreen, HelpScreen, FavoriteScreen, DetailScreen } from '../screen';
+import { HomeScreen, OpeningScreen, HelpScreen, ListProblemScreen, DetailScreen } from '../screen';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from '../constants';
 import { Header, MenuModal } from '../components';
@@ -60,7 +60,7 @@ const RootNavigator = () => {
             >
                 <Stack.Screen name='Opening' component={OpeningScreen} options={{headerShown: false}}/>
                 <Stack.Screen name='Home' component={HomeScreen} />
-                <Stack.Screen name='Favorite' component={FavoriteScreen} />
+                <Stack.Screen name='ListProblem' component={ListProblemScreen} />
                 <Stack.Screen name='Help' component={HelpScreen} />
                 <Stack.Screen name='Detail' component={DetailScreen} />
             </Stack.Navigator>

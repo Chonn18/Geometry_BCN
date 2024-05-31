@@ -25,25 +25,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,  // Độ dày của viền
         borderColor: "black",
     },
-
-    resultContainer1:{
-        marginTop: 10,
-    },
-
-    resultContainer: {
-        flexDirection: "row",
-        // alignItems: "center",
-        // justifyContent: "center",
-        padding:8,
-        backgroundColor: colors.WHITE,
-        width: 340,
-        height: 220,
-        borderRadius: 10,
-        marginTop: 10,
-        marginBottom: 15,
-        borderWidth: 2,  // Độ dày của viền
-        borderColor: "black",
-    },
     
     
     genderPhoto: {
@@ -86,6 +67,14 @@ const styles = StyleSheet.create({
         marginTop: sizes.ScreenPaddingVertical,
     },
 
+    title: {
+        marginTop: 10,
+        fontSize: 28,
+        fontWeight: 'bold',
+        color: colors.BLACK,
+        marginBottom: 5,
+      },
+
     inputLabel: {
         marginTop: 10,
         fontSize: 18,
@@ -97,7 +86,7 @@ const styles = StyleSheet.create({
     chooseButtonText: {
         color: colors.BLACK,
         fontSize: 14,
-        // fontWeight: 'bold',
+        fontWeight: 'bold',
     },
     chooseButton: {
         flex: 1,
@@ -141,10 +130,20 @@ const styles = StyleSheet.create({
     },
     loadingWrapper: {
         width: '100%',
-        padding:8,
-        // height: 300,
-        // alignItems: 'center',
-        // justifyContent: 'center',
+        height: 300,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    itemImage: {
+        width: 80,
+        height: 80,
+        borderRadius: 4,
+        marginRight: 12,
+    },
+
+    resultContainer1:{
+        marginTop: 10,
     },
     spaceWrapper: {
         width: '100%',
@@ -152,7 +151,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-
 
 })
 

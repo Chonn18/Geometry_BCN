@@ -97,15 +97,16 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: 10,
     },
-    productTitle: {
+    problemTitle: {
         color: colors.BLACK,
-        fontSize: 30,
+        fontSize: 22,
         fontWeight: "500",
         lineHeight: 40,
         textAlign: "center",
+        fontWeight: 'bold',
         // marginTop: 20,
     },
-    productsWrapper: {
+    problemsWrapper: {
         flexDirection: "column",
         flexWrap: "wrap",
         justifyContent: "space-between",

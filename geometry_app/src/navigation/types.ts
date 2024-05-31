@@ -1,15 +1,18 @@
 // import { ImagePickerAsset } from "expo-image-picker";
-import { IProduct } from "../types";
+import { IProblem } from "../types";
 
 export type RootStackParamList = {
     Opening: undefined,
     Home : undefined,
-    Favorite : undefined,
+    ListProblem : undefined,
 
     // Login: undefined,
     // SignUpScreen: undefined,
     Help: undefined,
     Detail:undefined,
+    Result: {
+        data : IProblem,
+    }
     // ProductDetail : {
     //     data : IProduct
     // } 

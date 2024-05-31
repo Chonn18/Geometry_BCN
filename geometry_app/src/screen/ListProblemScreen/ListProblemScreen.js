@@ -1,33 +1,33 @@
 import { Dimensions, Image, RefreshControl, ScrollView, Text, TextInput, TouchableOpacity, View, FlatList, ListRenderItem } from "react-native";
 import { useCallback, useEffect, useState } from "react";
-import { Carousel, Footer, ProductMini } from "../../components";
-import { ProductApi } from "../../services/api";
-import { styles } from "./FavoriteScreen.styles";
+import { Carousel, Footer, Problem } from "../../components";
+import { styles } from "./ListProblemScreen.styles";
 import { sizes,colors } from "../../constants";
+import { GeometryApi } from "../../services/api/geometry.api";
 
-const FavoriteScreen = ({navigation, route}) => {
-    // const [products, setProducts] = useState([])
-    // const [product, setProduct] = useState([])
+const ListProblemScreen = ({navigation, route}) => {
+    const [products, setProducts] = useState([])
+    const [problems, setProblems] = useState([])
     const [loading, setLoading] = useState(false)
 
-    // const handleGetListProduct = useCallback(async () => {
-    //     try {
-    //         setLoading(true) 
-    //         setProducts([])
-    //         const response = await ProductApi.getFavoriteProducts();
-    //         setProducts(response.data)
-    //     } catch (error) {
-    //         // console.log(error);
-    //         console.error("Axios error:", error);
-    //         // console.log("Error response:", error.response);
-    //     } finally {
-    //         setLoading(false)
-    //     }
-    // }, [])
+    const handleGetListProduct = useCallback(async () => {
+        try {
+            setLoading(true) 
+            setProblems([])
+            const response = await GeometryApi.getListIMO();
+            setProblems(response.data)
+        } catch (error) {
+            // console.log(error);
+            console.error("Axios error:", error);
+            // console.log("Error response:", error.response);
+        } finally {
+            setLoading(false)
+        }
+    }, [])
 
-    // useEffect(() => {
-    //     handleGetListProduct()
-    // }, [])
+    useEffect(() => {
+        handleGetListProduct()
+    }, [])
     
     return (
         <ScrollView
@@ -55,22 +55,22 @@ const FavoriteScreen = ({navigation, route}) => {
             
             <View style={styles.container}>
                 <View style={{ marginBottom: 30, marginTop:10,}}>
-                    <Text style={styles.productTitle}>Favorite</Text>
-                    {/* <View style={styles.productsWrapper}>
-                        {products.map((product) => (
-                            <ProductMini
-                                data={product}
-                                key={product.id}
+                    <Text style={styles.problemTitle}>IMO Geometric Problems </Text>
+                    <View style={styles.problemWrapper}>
+                        {problems.map((problem) => (
+                            <Problem
+                                data={problem}
+                                key={problem.id}
                                 style={{ width: "100%" }}
-                                handlePress={(product) => {
-                                    navigation.push("ProductDetail", {
-                                    data: product,
-                                    category: product.category,
+                                handlePress={(problem) => {
+                                    navigation.push("Result", {
+                                    data: problem,
+                                    // category: problem.category,
                                     });
                                 }}
                             />
                         ))}
-                    </View> */}
+                    </View>
                 </View>
             </View>
 
@@ -79,4 +79,4 @@ const FavoriteScreen = ({navigation, route}) => {
     )
 }
 
-export default FavoriteScreen
+export default ListProblemScreen

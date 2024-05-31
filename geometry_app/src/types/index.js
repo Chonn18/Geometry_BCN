@@ -1,1 +1,1 @@
-export * from './product.types'
+export * from './problem.types'

@@ -1,5 +1,6 @@
 export * from './HomeScreen'
 export * from './OpeningScreen'
-export * from './FavoriteScreen'
+export * from './ListProblemScreen'
 export * from './HelpScreen'
 export * from './DetailScreen'
+export * from './ResultScreen'

@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, RefreshControl, I
    Dimensions, TextInput, Linking} from "react-native";
 import styles from './HomeScreen.styles';
 import carouselContents from './HomeScreen.constants';
+import { Carousel, Footer, Problem } from "../../components";
 import { sizes, colors } from '../../constants';
-import { Carousel, Product } from '../../components';
 import { ProductApi } from '../../services/api';
 
 
@@ -13,7 +13,10 @@ const HomeScreen = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(false) 
   const handleStartButtonPress = () => {
     navigation.navigate('Detail')
-}
+  }
+  const handleListProblem = () => {
+    navigation.navigate('ListProblem')
+  }
  
 
   return (
@@ -55,8 +58,7 @@ const HomeScreen = ({navigation}) => {
 
           <View style={styles.photoWrapper}>
             <TouchableOpacity style={{width:"100%"}} activeOpacity={0.6}
-            onPress={() => {
-            }}>
+            onPress={handleListProblem}>
               <Image source={require("../../../assets/images/IMO_2.png")} style={styles.genderPhoto} /> 
               <View style={styles.textWrapper}>
                 <Text style={styles.genderText}> IMO Geometric Problems </Text>
@@ -73,7 +75,7 @@ const HomeScreen = ({navigation}) => {
                 <Text style={styles.startButtonText}>Solve a problem</Text>
             </TouchableOpacity> */}
         </View>
-
+    <Footer/>
     </ScrollView>
   );
 };
