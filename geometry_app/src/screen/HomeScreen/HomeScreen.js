@@ -53,20 +53,25 @@ const HomeScreen = ({navigation}) => {
           }
         /> */}
 
-        
-
           <View style={styles.photoWrapper}>
             <TouchableOpacity style={{width:"100%"}} activeOpacity={0.6}
             onPress={() => {
             }}>
-              <Image source={require("../../../assets/images/open.png")} style={styles.genderPhoto} /> 
-               {/* <Text style={styles.genderText}>Couple</Text> */}
+              <Image source={require("../../../assets/images/IMO_2.png")} style={styles.genderPhoto} /> 
+              <View style={styles.textWrapper}>
+                <Text style={styles.genderText}> IMO Geometric Problems </Text>
+              </View>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.startButton} onPress={handleStartButtonPress}>
-                <Text style={styles.startButtonText}>Go</Text>
-            </TouchableOpacity>
           </View>
+            
+            <TouchableOpacity style={styles.startButton} onPress={handleStartButtonPress}>
+                <Text style={styles.startButtonText}>Solve a problem</Text>
+            </TouchableOpacity>
+
+            {/* <TouchableOpacity style={styles.startButton} onPress={handleStartButtonPress}>
+                <Text style={styles.startButtonText}>Solve a problem</Text>
+            </TouchableOpacity> */}
         </View>
 
     </ScrollView>
