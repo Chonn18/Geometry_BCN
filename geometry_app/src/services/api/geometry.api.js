@@ -1,11 +1,12 @@
 import instance from "axios"
+import { firebase } from './firebaseConfig';
 
 // Thay url bằng địa chỉ ip của máy tính
 // How to check -> vào cmd gõ ipconfig -> tìm ipv4 
 const ENDPOINTS = {
     // SOLVE:"http://192.168.1.50:8000/api/solve/",
     // SOLVE_NI:"http://192.168.1.50:8000/api/solve_no_img/",
-    LISTIMO: "http://192.168.238.128:8000/api/problems/",
+    LISTIMO: "http://192.168.1.25:8000/api/problems/",
 }
 
 const solveProblem = async(problem,image) => {
@@ -49,10 +50,19 @@ const convertImageToBase64 = async (uri) => {
     });
 };
 
+const getListIMO2 = async () => {
+    const snapshot = await firebase.database().ref('/problems').orderByChild('category').equalTo('imo').once('value');
+    const problems = [];
+    snapshot.forEach((childSnapshot) => {
+      problems.push({ id: childSnapshot.key, ...childSnapshot.val() });
+    });
+    return problems;
+  };
+
 
 export const GeometryApi = {
     solveProblem,
     solveProblemNoImg,
     getListIMO,
-
+    getListIMO2,
 }

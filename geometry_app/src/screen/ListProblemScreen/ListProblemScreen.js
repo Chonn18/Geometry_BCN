@@ -1,4 +1,4 @@
-import { Dimensions, Image, RefreshControl, ScrollView, Text, TextInput, TouchableOpacity, View, FlatList, ListRenderItem } from "react-native";
+import { Dimensions, Image, RefreshControl, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useCallback, useEffect, useState } from "react";
 import { Carousel, Footer, Problem } from "../../components";
 import { styles } from "./ListProblemScreen.styles";
@@ -13,7 +13,7 @@ const ListProblemScreen = ({navigation, route}) => {
         try {
             setLoading(true) 
             setProblems([])
-            const response = await GeometryApi.getListIMO();
+            const response = await GeometryApi.getListIMO2();
             setProblems(response.data)
         } catch (error) {
             // console.log(error);
