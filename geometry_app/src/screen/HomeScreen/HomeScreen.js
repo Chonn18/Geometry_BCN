@@ -28,8 +28,9 @@ const HomeScreen = ({navigation}) => {
       }
       style={styles.container}
     >
+      <View style={styles.container2}>
       <View style={styles.containerWrapper}>
-        <View style={styles.findContainer}>
+        {/* <View style={styles.findContainer}>
           <TouchableOpacity >
             <Image
               source={require("../../../assets/icons/search_icon.png")}
@@ -42,10 +43,10 @@ const HomeScreen = ({navigation}) => {
             placeholder="Tìm kiếm..."
             placeholderTextColor={colors.GRAY}
           />
-        </View>
+        </View> */}
       </View>
 
-      <View style={styles.container}>
+      <View style={styles.container2}>
         {/* <Carousel
           contents={carouselContents}
           autoplay
@@ -75,8 +76,11 @@ const HomeScreen = ({navigation}) => {
                 <Text style={styles.startButtonText}>Solve a problem</Text>
             </TouchableOpacity> */}
         </View>
+      </View>
+      <View style = { styles.space}></View>
     <Footer/>
     </ScrollView>
+    
   );
 };
   

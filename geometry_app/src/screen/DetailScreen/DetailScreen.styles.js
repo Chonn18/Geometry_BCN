@@ -3,8 +3,15 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: sizes.ScreenPaddingHorizontal,
+        // paddingHorizontal: sizes.ScreenPaddingHorizontal,
         backgroundColor: colors.background,
+    },
+    container2: {
+        // paddingHorizontal: sizes.ScreenPaddingHorizontal,
+        paddingHorizontal:10,
+        backgroundColor: colors.background,
+        marginBottom:20,
+        // height: sizes.ScreenPaddingHorizontal,
     },
     containerWrapper: {
         flex: 1,
@@ -91,7 +98,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color: colors.BLACK,
-        marginBottom: 5,
+        // marginBottom: 5,
+        padding:10,
       },
 
     chooseButtonText: {
@@ -152,6 +160,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    space:{
+        height:200,
+    }
 
 
 })

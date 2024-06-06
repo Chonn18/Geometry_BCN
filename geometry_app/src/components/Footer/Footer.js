@@ -4,7 +4,7 @@ import { styles } from "./Footer.styles";
 import { colors, commons} from "../../constants";
 import Social from "../Social/Social";
 
-const Footer = ({theme="#3B3B3B"}) => {
+const Footer = ({theme="#A2A2A2"}) => {
     const navigateButton = useMemo(() => {
         return [
             {

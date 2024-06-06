@@ -15,7 +15,7 @@ const Problem = ({
     }, [handlePress, data])
 
     const renderImage = useMemo(() => {
-          if (data.image) {
+          if (data.image_result) {
             return (
               <Image 
                 source={{ uri: data.image }} style={styles.itemImage}
@@ -30,7 +30,7 @@ const Problem = ({
             );
           }
         
-      }, [data.image]);
+      }, [data.image_result]);
 
     return (
         <TouchableOpacity

@@ -3,9 +3,10 @@ import { colors, sizes } from "../../constants";
 
 export const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: sizes.ScreenPaddingHorizontal,
+        // paddingHorizontal: sizes.ScreenPaddingHorizontal,
         flexDirection: 'column',
-        paddingVertical: 48,
+        // paddingVertical: 48,
+        marginTop:30,
     },
     topBarWrapper: {
         alignItems: 'center',

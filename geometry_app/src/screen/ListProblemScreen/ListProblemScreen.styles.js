@@ -3,9 +3,14 @@ import { colors, sizes } from "../../constants";
 
 export const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: sizes.ScreenPaddingHorizontal,
-        backgroundColor: colors.WHITE,
+        // paddingHorizontal: sizes.ScreenPaddingHorizontal,
+        backgroundColor: colors.background,
     },
+    container2: {
+        paddingHorizontal: sizes.ScreenPaddingHorizontal,
+        backgroundColor: colors.background,
+    },
+
     categoryWrapper: {
         flexDirection: "row",
         flexWrap: "wrap",
@@ -21,7 +26,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 5,
     },
     categoryIconWrapper: {
-        backgroundColor: colors.WHITE,
+        backgroundColor: colors.background,
         shadowColor: colors.BLACK,
         shadowOffset: {
         width: 0,
@@ -54,7 +59,7 @@ export const styles = StyleSheet.create({
     },
     genderConainter: {
         width: "47%",
-        backgroundColor: colors.WHITE,
+        backgroundColor: colors.background,
         borderRadius: 20,
         shadowColor: colors.BLACK,
         shadowOffset: {
@@ -117,7 +122,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.WHITE,
+        backgroundColor: colors.background,
         // marginBottom: 10,
     },
     
@@ -146,5 +151,8 @@ export const styles = StyleSheet.create({
         color: colors.BLACK,
         fontSize: 16,
     },
+    space:{
+        height:200,
+    }
     
 });

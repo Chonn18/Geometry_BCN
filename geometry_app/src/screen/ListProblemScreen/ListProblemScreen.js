@@ -6,11 +6,10 @@ import { sizes,colors } from "../../constants";
 import { GeometryApi } from "../../services/api/geometry.api";
 
 const ListProblemScreen = ({navigation, route}) => {
-    const [products, setProducts] = useState([])
     const [problems, setProblems] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const handleGetListProduct = useCallback(async () => {
+    const handleGetListProblem = useCallback(async () => {
         try {
             setLoading(true) 
             setProblems([])
@@ -26,16 +25,17 @@ const ListProblemScreen = ({navigation, route}) => {
     }, [])
 
     useEffect(() => {
-        handleGetListProduct()
+        handleGetListProblem()
     }, [])
     
     return (
         <ScrollView
             refreshControl={
                 <RefreshControl refreshing={loading} 
-                // onRefresh={handleGetListProduct} 
+                onRefresh={handleGetListProblem} 
                 />
             }
+            style={styles.container}
         >
             <View style = {styles.containerWrapper}>
                 <View style = {styles.findContainer}>
@@ -53,7 +53,7 @@ const ListProblemScreen = ({navigation, route}) => {
                 </View>        
             </View>
             
-            <View style={styles.container}>
+            <View style={styles.container2}>
                 <View style={{ marginBottom: 30, marginTop:10,}}>
                     <Text style={styles.problemTitle}>IMO Geometric Problems </Text>
                     <View style={styles.problemWrapper}>
@@ -73,7 +73,7 @@ const ListProblemScreen = ({navigation, route}) => {
                     </View>
                 </View>
             </View>
-
+            <View style = {styles.space}></View>
             <Footer />
         </ScrollView>
     )

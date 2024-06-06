@@ -23,9 +23,9 @@ const RootNavigator = () => {
             if ( NavigationService.canGoBack()) {
                 NavigationService.pop()
             } else {
-                Alert.alert("Thoát", "Bạn muốn thoát khỏi ứng dụng?", [
+                Alert.alert("Exit", "Do you  want exit this app?", [
                     {
-                        text: "Hủy",
+                        text: "Cancel",
                         onPress: () => {}
                     },
                     {

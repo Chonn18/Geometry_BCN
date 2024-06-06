@@ -53,10 +53,10 @@ const ResultScreen = ({navigation, route}) => {
 
   const renderResult = useMemo(() => {
     if (!isLoading) {
-      if (data.result) {
+      if (data.solve) {
         return (
           <View style={styles.resultContainer}>
-            <Text style={styles.chooseButtonText}>{data.result}</Text>
+            <Text style={styles.chooseButtonText}>{data.solve}</Text>
           </View>
         );
       } 
@@ -69,7 +69,7 @@ const ResultScreen = ({navigation, route}) => {
       }
     }
     return null;
-  }, [data.result, isLoading]);
+  }, [data.solve, isLoading]);
 
   return (
     <ScrollView style={styles.container}>
@@ -100,7 +100,7 @@ const ResultScreen = ({navigation, route}) => {
         </View>
         {renderImage}
         
-        <Text style={styles.inputLabel}> Results: </Text>
+        <Text style={styles.inputLabel}> Solution: </Text>
         <View style={styles.resultContainer1}>
           {renderImageRe}
           {renderResult}
@@ -113,11 +113,6 @@ const ResultScreen = ({navigation, route}) => {
         </View>       
       </View>
 
-      {/* <View style = {styles.spaceWrapper}></View>   
-      <View style={styles.resultContainer1}>
-        {renderImage}
-        {renderResult}
-      </View> */}
 
     </ScrollView>
 

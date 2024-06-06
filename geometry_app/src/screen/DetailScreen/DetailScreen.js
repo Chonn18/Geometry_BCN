@@ -67,7 +67,7 @@ const DetailScreen = ({ navigation }) => {
   const handleSolve = useCallback(async () => {
     try {
       if (!textContent) {
-        Alert.alert("Error", "Please enter all fields and select an image.");
+        Alert.alert("Error", "Please enter all fields ");
         return;
       }
       setIsLoading(true);
@@ -129,6 +129,7 @@ const DetailScreen = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.container}>
+      <View style ={styles.container2}>
       <View style={styles.container}>
         <Text style={styles.inputLabel}>Problem:</Text>
         <View style={styles.containerWrapper}>
@@ -178,6 +179,8 @@ const DetailScreen = ({ navigation }) => {
         {renderImage}
         {renderResult}
       </View>
+      </View>
+      <View style = {styles.space}></View>
       <Footer />
     </ScrollView>
   );

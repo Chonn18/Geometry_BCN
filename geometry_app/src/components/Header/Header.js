@@ -35,10 +35,10 @@ const Header = ({navigation}) => {
                 />
             </View>
             <View style={styles.cartWrapper}>
-                <TouchableOpacity onPress={() => navigation.navigate('Favorite')}>
-                    <Image source={require('../../../assets/icons/heart(1).png')} style={styles.cartIcon}
-                    />
-                </TouchableOpacity>
+                {/* <TouchableOpacity onPress={() => navigation.navigate('Favorite')}>
+                    <Image source={require('../../../assets/icons/heart(1).png')} 
+                    style={styles.cartIcon} />
+                </TouchableOpacity> */}
                 {/* <View style={styles.bagdeWrapper}>
                     <Text style={styles.bagdeText}>0</Text>
                 </View> */}

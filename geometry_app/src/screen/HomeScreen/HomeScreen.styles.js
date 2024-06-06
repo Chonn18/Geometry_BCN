@@ -4,8 +4,17 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         // paddingHorizontal: sizes.ScreenPaddingHorizontal,
+        // paddingHorizontal:10,
+        backgroundColor: colors.background,
+        marginBottom:20,
+        // height: sizes.ScreenPaddingHorizontal,
+    },
+    container2: {
+        // paddingHorizontal: sizes.ScreenPaddingHorizontal,
         paddingHorizontal:10,
         backgroundColor: colors.background,
+        marginBottom:20,
+        // height: sizes.ScreenPaddingHorizontal,
     },
     containerWrapper: {
         flex: 1,
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 40,
-        marginBottom:30,
+        marginTop:30,
     },
     
     icon: {
@@ -80,6 +89,9 @@ const styles = StyleSheet.create({
         // marginTop: sizes.ScreenPaddingVertical,
         marginTop:20,
     },
+    space:{
+        height:200,
+    }
 })
 
 export default styles;
