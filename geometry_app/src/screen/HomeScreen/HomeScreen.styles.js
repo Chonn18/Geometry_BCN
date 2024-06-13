@@ -22,21 +22,38 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: colors.background,
     },
-    findContainer: {
+    buttonContainer: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: colors.WHITE,
-        width: 340,
-        height: 40,
+        width: '80%',
+        height: 100,
         borderRadius: 10,
         marginTop: 10,
         marginBottom: 15,
         borderWidth: 2,  // Độ dày của viền
         borderColor: "black",
     },
-    
-    
+    itemContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 16,
+        marginTop:10,
+        backgroundColor: colors.LIGHT_SKY_BLUE, 
+        padding: 10,
+        borderRadius: 8,
+        borderColor: "black",
+      },
+    itemImage: {
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        marginRight: 12,
+    },
+    itemInfo: {
+        flex: 1,
+      },
     genderPhoto: {
         width: "100%",
         resizeMode: "cover",
@@ -79,6 +96,11 @@ const styles = StyleSheet.create({
     startButtonText: {
         color: colors.WHITE,
         fontSize: 20,
+        fontWeight: 'bold',
+    },
+    textSolve: {
+        color: colors.BLACK,
+        fontSize: 18,
         fontWeight: 'bold',
     },
     startButton: {

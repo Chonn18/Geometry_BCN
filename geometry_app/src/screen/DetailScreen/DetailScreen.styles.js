@@ -18,23 +18,52 @@ const styles = StyleSheet.create({
         // justifyContent: "center",
         alignItems: "center",
         backgroundColor: colors.background,
+        // padding:5,
     },
     findContainer: {
         flexDirection: "row",
         // alignItems: "center",
         justifyContent: "center",
         backgroundColor: colors.WHITE,
-        width: 340,
+        width: '100%',
         height: 120,
+        borderRadius: 10,
+        marginTop: 10,
+        // marginBottom: 15,
+        borderWidth: 2,  // Độ dày của viền
+        borderColor: "black",
+    },
+    goalContainer: {
+        flexDirection: "row",
+        // alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: colors.WHITE,
+        width: '100%',
+        height: 60,
         borderRadius: 10,
         marginTop: 10,
         marginBottom: 15,
         borderWidth: 2,  // Độ dày của viền
         borderColor: "black",
     },
+    titleContainer: {
+        flexDirection: "row",
+        // alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: colors.WHITE,
+        width: 340,
+        height: 40,
+        borderRadius: 10,
+        marginTop: 10,
+        marginBottom: 15,
+        borderWidth: 2,  // Độ dày của viền
+        borderColor: "black",
+        marginVertical:10,
+    },
 
     resultContainer1:{
         marginTop: 10,
+        height: '100%',
     },
 
     resultContainer: {
@@ -44,7 +73,35 @@ const styles = StyleSheet.create({
         padding:8,
         backgroundColor: colors.WHITE,
         width: 340,
-        height: 220,
+        height: 100,
+        borderRadius: 10,
+        marginTop: 10,
+        marginBottom: 15,
+        borderWidth: 2,  // Độ dày của viền
+        borderColor: "black",
+    },
+    diagramContainer: {
+        flexDirection: "row",
+        // alignItems: "center",
+        // justifyContent: "center",
+        padding:8,
+        backgroundColor: colors.WHITE,
+        width: 340,
+        height: 180,
+        borderRadius: 10,
+        marginTop: 10,
+        marginBottom: 15,
+        borderWidth: 2,  // Độ dày của viền
+        borderColor: "black",
+    },
+    textContainer: {
+        flexDirection: "row",
+        // alignItems: "center",
+        // justifyContent: "center",
+        padding:8,
+        backgroundColor: colors.WHITE,
+        width: 340,
+        height: 70,
         borderRadius: 10,
         marginTop: 10,
         marginBottom: 15,
@@ -75,7 +132,7 @@ const styles = StyleSheet.create({
     searchInput: {
         flex: 1,
         // verticalAlign: 15,
-        marginTop:8,
+        // marginTop:8,
         marginLeft: 10, 
         color: colors.BLACK,
         fontSize: 14,
@@ -95,12 +152,20 @@ const styles = StyleSheet.create({
 
     inputLabel: {
         marginTop: 10,
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         color: colors.BLACK,
-        // marginBottom: 5,
-        padding:10,
-      },
+        marginBottom: 15,
+
+    },
+    detailtext: {
+        marginTop: 15,
+        fontSize: 14,
+        // fontWeight: 'bold',
+        color: colors.BLACK,
+        marginBottom: -3,
+
+    },
 
     chooseButtonText: {
         color: colors.BLACK,
@@ -146,6 +211,7 @@ const styles = StyleSheet.create({
         height: 200,
         // marginVertical: sizes.MARGIN,
         marginTop:10,
+        marginBottom:10,
     },
     loadingWrapper: {
         width: '100%',
@@ -162,6 +228,11 @@ const styles = StyleSheet.create({
     },
     space:{
         height:200,
+    },
+    line:{
+        height:1,
+        backgroundColor: colors.BLACK,
+        marginVertical:10,
     }
 
 

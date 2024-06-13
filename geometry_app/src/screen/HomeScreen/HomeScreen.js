@@ -14,6 +14,12 @@ const HomeScreen = ({navigation}) => {
   const handleStartButtonPress = () => {
     navigation.navigate('Detail')
   }
+  const handleSolvePGPSPress = () => {
+    navigation.navigate('Detail2')
+  }
+  const handleSolveInterPress = () => {
+    navigation.navigate('Detail3')
+  }
   const handleListProblem = () => {
     navigation.navigate('ListProblem')
   }
@@ -68,17 +74,54 @@ const HomeScreen = ({navigation}) => {
 
           </View>
             
-            <TouchableOpacity style={styles.startButton} onPress={handleStartButtonPress}>
+            {/* <TouchableOpacity style={styles.startButton} onPress={handleStartButtonPress}>
                 <Text style={styles.startButtonText}>Solve a problem</Text>
             </TouchableOpacity>
 
-            {/* <TouchableOpacity style={styles.startButton} onPress={handleStartButtonPress}>
-                <Text style={styles.startButtonText}>Solve a problem</Text>
+            <TouchableOpacity style={styles.startButton} onPress={handleSolvePGPSPress}>
+                <Text style={styles.startButtonText}>Solve PGPS</Text>
             </TouchableOpacity> */}
+
+            <TouchableOpacity
+                style={styles.itemContainer}
+                onPress={handleStartButtonPress}
+                // activeOpacity={0.6}
+                >
+                <Image source={require("../../../assets/images/alpha.png")} style={styles.itemImage} />
+                <View style={styles.itemInfo}>
+                    <Text style={styles.textSolve}>Solve a problem with AlphaGeometry </Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.itemContainer}
+                onPress={handleSolvePGPSPress}
+                // activeOpacity={0.6}
+                >
+                <Image source={require("../../../assets/images/pgps.png")} style={styles.itemImage} />
+                <View style={styles.itemInfo}>
+                    <Text style={styles.textSolve}>Solve a problem with PGPS </Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.itemContainer}
+                onPress={handleSolveInterPress}
+                // activeOpacity={0.6}
+                >
+                <Image source={require("../../../assets/images/intergps.png")} style={styles.itemImage} />
+                <View style={styles.itemInfo}>
+                    <Text style={styles.textSolve}>Solve a problem with InterGPS </Text>
+                </View>
+            </TouchableOpacity>
+
         </View>
       </View>
       <View style = { styles.space}></View>
-    <Footer/>
+    <Footer
+      // isVisible={isMenuVisible} 
+      navigateToHome={() => navigation.navigate('Home')}
+  />
     </ScrollView>
     
   );

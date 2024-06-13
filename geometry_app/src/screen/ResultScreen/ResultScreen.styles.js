@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: colors.WHITE,
         width: 340,
-        height: 120,
+        height: "100%",
         borderRadius: 10,
         marginTop: 10,
         marginBottom: 15,
@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         paddingHorizontal: 30,
         borderRadius: 10,
-        marginTop: sizes.ScreenPaddingVertical,
+        marginTop: 10,
+        marginBottom:20,
     },
 
     title: {
@@ -151,6 +152,29 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    modalBackground: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      modalCloseButton: {
+        position: 'absolute',
+        top: 40,
+        right: 20,
+        backgroundColor: colors.white,
+        padding: 10,
+        borderRadius: 20,
+      },
+      modalCloseButtonText: {
+        color: colors.black,
+        fontSize: sizes.h4,
+      },
+      fullscreenImage: {
+        width: '100%',
+        height: '80%',
+        resizeMode: 'contain',
+      },
 
 })
 

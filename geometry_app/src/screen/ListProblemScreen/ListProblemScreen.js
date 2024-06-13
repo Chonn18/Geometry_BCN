@@ -1,6 +1,7 @@
 import { Dimensions, Image, RefreshControl, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useCallback, useEffect, useState } from "react";
-import { Carousel, Footer, Problem } from "../../components";
+import { Carousel, Footer } from "../../components";
+import { Problem } from "../../components/Problem";
 import { styles } from "./ListProblemScreen.styles";
 import { sizes,colors } from "../../constants";
 import { GeometryApi } from "../../services/api/geometry.api";
@@ -14,7 +15,8 @@ const ListProblemScreen = ({navigation, route}) => {
             setLoading(true) 
             setProblems([])
             const response = await GeometryApi.getListIMO();
-            setProblems(response.data)
+            // console.log("++++++++++++++++++++++++++++++++++++++++++++++++data:",response);
+            setProblems(response)
         } catch (error) {
             // console.log(error);
             console.error("Axios error:", error);
@@ -57,10 +59,12 @@ const ListProblemScreen = ({navigation, route}) => {
                 <View style={{ marginBottom: 30, marginTop:10,}}>
                     <Text style={styles.problemTitle}>IMO Geometric Problems </Text>
                     <View style={styles.problemWrapper}>
+                        
                         {problems.map((problem) => (
+                            
                             <Problem
                                 data={problem}
-                                key={problem.id}
+                                key={problem.title}
                                 style={{ width: "100%" }}
                                 handlePress={(problem) => {
                                     navigation.push("Result", {

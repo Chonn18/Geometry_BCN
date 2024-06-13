@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Alert, BackHandler, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen, OpeningScreen, HelpScreen, ListProblemScreen, DetailScreen } from '../screen';
+import { HomeScreen, OpeningScreen, HelpScreen, ListProblemScreen, DetailScreen, ResultScreen, Detail2Screen, Detail3Screen } from '../screen';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from '../constants';
 import { Header, MenuModal } from '../components';
@@ -63,6 +63,9 @@ const RootNavigator = () => {
                 <Stack.Screen name='ListProblem' component={ListProblemScreen} />
                 <Stack.Screen name='Help' component={HelpScreen} />
                 <Stack.Screen name='Detail' component={DetailScreen} />
+                <Stack.Screen name='Detail2' component={Detail2Screen} />
+                <Stack.Screen name='Detail3' component={Detail3Screen} />
+                <Stack.Screen name='Result' component={ResultScreen} />
             </Stack.Navigator>
             <MenuModal isVisible={isMenuVisible} onClose={() => setIsMenuVisible(false)} />
         </NavigationContainer>
