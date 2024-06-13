@@ -1,5 +1,5 @@
 import instance from "axios"
-import { firebase } from './firebaseConfig';
+// import { firebase } from './firebaseConfig';
 
 // Thay url bằng địa chỉ ip của máy tính
 // How to check -> vào cmd gõ ipconfig -> tìm ipv4 
@@ -50,14 +50,14 @@ const convertImageToBase64 = async (uri) => {
     });
 };
 
-const getListIMO2 = async () => {
-    const snapshot = await firebase.database().ref('/problems').orderByChild('category').equalTo('imo').once('value');
-    const problems = [];
-    snapshot.forEach((childSnapshot) => {
-      problems.push({ id: childSnapshot.key, ...childSnapshot.val() });
-    });
-    return problems;
-  };
+// const getListIMO2 = async () => {
+//     const snapshot = await firebase.database().ref('/problems').orderByChild('category').equalTo('imo').once('value');
+//     const problems = [];
+//     snapshot.forEach((childSnapshot) => {
+//       problems.push({ id: childSnapshot.key, ...childSnapshot.val() });
+//     });
+//     return problems;
+//   };
 
 
 export const GeometryApi = {

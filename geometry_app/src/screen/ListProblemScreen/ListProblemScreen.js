@@ -13,7 +13,7 @@ const ListProblemScreen = ({navigation, route}) => {
         try {
             setLoading(true) 
             setProblems([])
-            const response = await GeometryApi.getListIMO2();
+            const response = await GeometryApi.getListIMO();
             setProblems(response.data)
         } catch (error) {
             // console.log(error);
