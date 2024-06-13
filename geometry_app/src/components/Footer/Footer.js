@@ -4,15 +4,15 @@ import { styles } from "./Footer.styles";
 import { colors, commons} from "../../constants";
 import Social from "../Social/Social";
 
-const Footer = ({theme="#A2A2A2"}) => {
+const Footer = ({theme="#A2A2A2", navigateToHome}) => {
     const navigateButton = useMemo(() => {
         return [
             {
                 title : 'Home',
-                onPress: () => {}
+                onPress: () => { navigateToHome() }
             },
             {
-                title: 'Product',
+                title: 'Problem',
                 onPress: () => {},
             },
             {

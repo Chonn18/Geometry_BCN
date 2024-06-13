@@ -15,6 +15,7 @@ const MenuModal = ({navigateToHome, isVisible, onClose, navigateToFavorite, navi
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => {
+                    
                     navigateToHome()
                     onClose()
                 }}>
@@ -33,10 +34,10 @@ const MenuModal = ({navigateToHome, isVisible, onClose, navigateToFavorite, navi
                 }}>
                     <View style={modalStyles.rowContainer}>
                         <Image
-                            source={require('../../../assets/icons/heart.png')}
+                            source={require('../../../assets/icons/history.png')}
                             style={modalStyles.icon}
                         />
-                        <Text style={modalStyles.menuText}>Favorite</Text>
+                        <Text style={modalStyles.menuText}>History</Text>
                     </View>
                 </TouchableOpacity>
 

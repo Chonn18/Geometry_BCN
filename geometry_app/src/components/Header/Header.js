@@ -51,6 +51,7 @@ const Header = ({navigation}) => {
                 navigateToFavorite={() => navigation.navigate('Favorite')}
                 navigateToHelp={() => navigation.navigate('Help')}
             />
+            
         </View>
     )
 }

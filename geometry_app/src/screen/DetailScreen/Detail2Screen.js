@@ -6,13 +6,16 @@ import { sizes, colors } from '../../constants';
 import { Button, Footer } from '../../components'; // Đảm bảo rằng bạn đã import Button từ components của bạn
 import { GeometryApi } from '../../services/api/geometry.api';
 
-const DetailScreen = ({ navigation }) => {
+const Detail2Screen = ({ navigation }) => {
   const [visible, setVisible] = useState(false);
   const [imageUri, setImageUri] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [textContent, setTextContent] = useState('');
   const [textTitle, setTextTitle] = useState('');
-  const [problem, setProblem] = useState({ solve: '', image_result: '' });
+  const [textCons, setCons] = useState('');
+  const [textImage, setImage] = useState('');
+  const [textGoal, setGoal] = useState('');
+  const [problem, setProblem] = useState({  image_result: '', text: '' });
 
   useEffect(() => {
     (async () => {
@@ -66,17 +69,19 @@ const DetailScreen = ({ navigation }) => {
 
   const handleSolve = useCallback(async () => {
     try {
-      if (!textContent || !textTitle) {
+      if (!textContent || !textTitle || !textCons) {
         Alert.alert("Error", "Please enter all fields ");
         return;
       }
       setIsLoading(true);
       let response;
-      if (!imageUri) { // if don't have image
-        response = await GeometryApi.solveProblemNoImg(textTitle, textContent);
-      } else { 
-        response = await GeometryApi.solveProblem(textTitle, textContent, imageUri);
-      }
+      // if (!imageUri) { // if don't have image
+      //   response = await GeometryApi.solveProblemNoImg(textTitle, textContent);
+      // } else { 
+      //   // response = await GeometryApi.solveProblem(textTitle, textContent, imageUri);
+      //   response = await GeometryApi.solveProblem(textTitle, textCons,textContent, textImage, textGoal);
+      // }
+      response = await GeometryApi.solveWithPSPG(textTitle, textCons,textContent, textImage, textGoal);
       console.log(response)
       setProblem(response)
       // navigation.push("Result", {
@@ -95,7 +100,8 @@ const DetailScreen = ({ navigation }) => {
     if (!isLoading) {
       if (problem.image_result) {
         return (
-          <View>
+          <View >
+              <View style = {styles.line}></View>
               <Text style={styles.inputLabel}> Solution: </Text>
               <Image 
                 source={{ uri: problem.image_result }} 
@@ -118,25 +124,26 @@ const DetailScreen = ({ navigation }) => {
 
   const renderResult = useMemo(() => {
     if (!isLoading) {
-      if (problem && problem.solve) {
+      if (problem && problem.text) {
         return (
-          // <View style={styles.resultContainer}>
-          //   <Text style={styles.chooseButtonText}>{problem.solve}</Text>
-          // </View>
-          <View style={styles.containerWrapper}>
-            <View style={styles.resultContainer}>
-              <TextInput
-                style={styles.searchInput}
-                // placeholder={}
-                placeholderTextColor={colors.GRAY}
-                multiline={true}
-                numberOfLines={4}
-                value={problem.solve}
-                onChangeText={false}
-                editable={false}
-              />
-            </View>
+          <View >
+            <View style = {styles.line}></View>
+            <Text style={styles.inputLabel}> {problem.text}</Text>
           </View>
+          // <View style={styles.containerWrapper}>
+          //   <View style={styles.resultContainer}>
+          //     <TextInput
+          //       style={styles.searchInput}
+          //       // placeholder={}
+          //       placeholderTextColor={colors.GRAY}
+          //       multiline={true}
+          //       numberOfLines={4}
+          //       value={problem.solve}
+          //       onChangeText={false}
+          //       editable={false}
+          //     />
+          //   </View>
+          // </View>
         );
       } 
       // else {
@@ -177,23 +184,76 @@ const DetailScreen = ({ navigation }) => {
           <View style={styles.findContainer}>
             <TextInput
               style={styles.searchInput}
-              placeholder="Description here..."
+              placeholder="Input Construction here..."
               placeholderTextColor={colors.GRAY}
               multiline={true}
-              numberOfLines={4}
+              numberOfLines={3}
+              value={textCons}
+              onChangeText={setCons}
+            />
+          </View>
+        </View>
+
+        <View style={styles.containerWrapper}>
+          <View style={styles.findContainer}>
+            <TextInput
+              style={styles.searchInput}
+              placeholder="Description text here..."
+              placeholderTextColor={colors.GRAY}
+              multiline={true}
+              numberOfLines={3}
               value={textContent}
               onChangeText={setTextContent}
             />
           </View>
         </View>
-        <View style={styles.photoWrapper}>
+        <View style={styles.containerWrapper}>
+          <View style={styles.findContainer}>
+            <TextInput
+              style={styles.searchInput}
+              placeholder="Description Image here..."
+              placeholderTextColor={colors.GRAY}
+              multiline={true}
+              numberOfLines={3}
+              value={textImage}
+              onChangeText={setImage}
+            />
+          </View>
+        </View>
+        {/* <View style={styles.containerWrapper}>
+          <View style={styles.goalContainer}>
+            <TextInput
+              style={styles.searchInput}
+              placeholder="Input problem answer here..."
+              placeholderTextColor={colors.GRAY}
+              multiline={true}
+              numberOfLines={3}
+              value={textGoal}
+              onChangeText={setGoal}
+            />
+          </View>
+        </View> */}
+        <View style={styles.containerWrapper}>
+          <View style={styles.goalContainer}>
+            <TextInput
+              style={styles.searchInput}
+              placeholder="Input goal here..."
+              placeholderTextColor={colors.GRAY}
+              multiline={true}
+              numberOfLines={3}
+              value={textGoal}
+              onChangeText={setGoal}
+            />
+          </View>
+        </View>
+        {/* <View style={styles.photoWrapper}>
           <TouchableOpacity style={styles.chooseButton} onPress={handleChoosePress}>
             <Text style={styles.chooseButtonText}>Choose Image</Text>
           </TouchableOpacity>
           {imageUri && (
             <Image source={{ uri: imageUri }} style={styles.selectedImage} />
           )}
-        </View>
+        </View> */}
 
         <View style={styles.photoWrapper}>
           <TouchableOpacity style={styles.startButton} onPress={handleSolve}>
@@ -218,15 +278,13 @@ const DetailScreen = ({ navigation }) => {
       <View style = {styles.spaceWrapper}></View>   
       <View style={styles.resultContainer1}>
         {renderImage}
-        {renderResult}
+        {/* {renderResult} */}
       </View>
       </View>
-      <View style = {styles.space}></View>
-      <Footer 
-      navigateToHome={() => navigation.navigate('Home')}
-      />
+      {/* <View style = {styles.space}></View> */}
+      <Footer />
     </ScrollView>
   );
 };
 
-export default DetailScreen;
+export default Detail2Screen;

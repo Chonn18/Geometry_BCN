@@ -1,6 +1,6 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./Problem.styles";
-import { useCallback } from "react";
+import { useCallback ,useMemo } from "react";
 
 const Problem = ({
     data, 
@@ -18,7 +18,7 @@ const Problem = ({
           if (data.image_result) {
             return (
               <Image 
-                source={{ uri: data.image }} style={styles.itemImage}
+                source={{ uri: data.image_result }} style={styles.itemImage}
               />
             );
           } 
