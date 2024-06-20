@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
     resultContainer1:{
         marginTop: 10,
-        height: '100%',
+        // height: '100%',
     },
 
     resultContainer: {
@@ -74,6 +74,20 @@ const styles = StyleSheet.create({
         backgroundColor: colors.WHITE,
         width: 340,
         height: 100,
+        borderRadius: 10,
+        marginTop: 10,
+        marginBottom: 15,
+        borderWidth: 2,  // Độ dày của viền
+        borderColor: "black",
+    },
+    resultContainer2: {
+        flexDirection: "row",
+        // alignItems: "center",
+        // justifyContent: "center",
+        padding:8,
+        backgroundColor: colors.WHITE,
+        width: 340,
+        height: '100%',
         borderRadius: 10,
         marginTop: 10,
         marginBottom: 15,
@@ -158,9 +172,17 @@ const styles = StyleSheet.create({
         marginBottom: 15,
 
     },
+    titlePage: {
+        marginTop: 18,
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: colors.BLACK,
+        marginBottom: 15,
+
+    },
     detailtext: {
         marginTop: 15,
-        fontSize: 14,
+        fontSize: 16,
         // fontWeight: 'bold',
         color: colors.BLACK,
         marginBottom: -3,
@@ -208,18 +230,32 @@ const styles = StyleSheet.create({
     },
     selectedImage: {
         width: '100%',
-        height: 200,
+        height: 300,
         // marginVertical: sizes.MARGIN,
         marginTop:10,
         marginBottom:10,
+        resizeMode: "contain"
     },
-    loadingWrapper: {
+    loadingWrapper1: {
         width: '100%',
         padding:8,
         // height: 300,
         // alignItems: 'center',
         // justifyContent: 'center',
     },
+    loadingWrapper: {
+        flex: 1,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Màu nền mờ để làm nổi bật ActivityIndicator
+        zIndex: 1000, // Đảm bảo nó hiển thị trên các thành phần khác
+      },
+      
     spaceWrapper: {
         width: '100%',
         height: 50,
@@ -233,9 +269,28 @@ const styles = StyleSheet.create({
         height:1,
         backgroundColor: colors.BLACK,
         marginVertical:10,
-    }
+    },
 
-
+    checkboxContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 10,
+    },
+    checkbox: {
+        alignSelf: 'center',
+    },
+    label: {
+        marginLeft: 8,
+    },
+    cartWrapper: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 5,
+    },
+    cartIcon: {
+        width: sizes.IconWidth,
+        height: sizes.IconHeight,
+    },
 })
 
 export default styles;

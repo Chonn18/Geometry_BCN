@@ -6,8 +6,6 @@ export type RootStackParamList = {
     Home : undefined,
     ListProblem : undefined,
 
-    // Login: undefined,
-    // SignUpScreen: undefined,
     Help: undefined,
     Detail:{
         problem : IProblem,
@@ -18,14 +16,11 @@ export type RootStackParamList = {
     Detail3:{
         data : InterGPS,
     }
+    CheckData:{
+        data : InterGPS,
+    }
     Result: {
         data : IProblem,
     }
-    // ProductDetail : {
-    //     data : IProduct
-    // } 
-    // TryOn: {
-    //     product : IProduct,
-    //     selfImage: ImagePickerAsset
-    // }
+   
 }
